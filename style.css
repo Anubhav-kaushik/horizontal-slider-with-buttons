@@ -1,0 +1,265 @@
+/* basic */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background: #fafafa;
+}
+
+@keyframes fadeInTop {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOutTop {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes fadeOutBottom {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+}
+
+@keyframes fadeOutLeft {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes fadeOutRight {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+.personality-type--input-main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    gap: 1em;
+    overflow: hidden;
+}
+
+.personality-type--input-main-container .slider-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.personality-type--input-main-container .slide-container {
+    flex: 1 1 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.personality-type--input-main-container .slide {
+    min-height: 15rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding: 0 1em;
+    gap: 1em;
+    transition: opacity 0.5s ease-in-out;
+    align-self: normal;
+}
+
+.personality-type--input-main-container .slide[data-active="true"] {
+    opacity: 1;
+}
+
+.personality-type--input-main-container .slide .slide-inner {
+    border: 2px solid gainsboro;
+    padding: 1em;
+    width: 80%;
+    background-color: rgb(255, 255, 255);
+}
+
+.personality-type--input-main-container .pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 0 1em 0;
+}
+
+.personality-type--input-main-container .options {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 1em;
+}
+
+.personality-type--input-main-container .options .option {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 1.2em;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out,
+        color 0.5s ease-in-out;
+}
+
+.personality-type--input-main-container .options .option input[type="radio"] {
+    display: none;
+}
+
+.personality-type--input-main-container .options input[type="radio"]:checked+label {
+    background-color: #c24040b4;
+    color: white;
+}
+
+.personality-type--input-main-container .options .option label {
+    cursor: pointer;
+    width: 100%;
+    padding: 0.5em;
+}
+
+.personality-type--input-main-container .pagination-container .pagination-circle {
+    fill: transparent;
+    stroke: #c24040b4;
+    transition: fill 0.5s ease-in-out,
+                stroke 0.5s ease-in-out;
+}
+
+.personality-type--input-main-container .pagination-container .pagination-circle[data-visited="true"] {
+    fill: #c24040b4;
+    cursor: pointer;
+    stroke: none;
+}
+
+.personality-type--input-main-container .pagination-container .pagination-circle[data-visited="false"] {
+    cursor: not-allowed;
+}
+
+.personality-type--input-main-container .pagination-container .pagination-circle[data-active="true"] {
+    fill: #c24040b4;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 0 1em 0;
+    width: 100%;
+}
+
+.btn-container button {
+    padding: 0.5em 1em;
+    border-radius: 1.2em;
+    background-color: #c24040b4;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
